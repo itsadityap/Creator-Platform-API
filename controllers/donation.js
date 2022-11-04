@@ -4,18 +4,19 @@ async function Donate (req, res)
 {
     const token = req.headers.authorization.split(" ")[1];
     const decoded = jwt.verify(token, process.env.SECRET)._id;
-
     const validateCreatorID = req.body.ToCreatorID;
     
-    await DonationData.findOne({_id:validateCreatorID},async function(err, result){
 
+    await DonationData.findOne({_id:validateCreatorID},async function(err, result)
+    {
         if(err)
         {
             res.status(404).send({status:"The creator you want was not found in the database."})
         }
 
-        if(result && (decoded._id!=validateCreatorID._id))
+        if(result && (decoded!=validateCreatorID))
         {
+            let foundUser = await DonationData.findOne({_id:result._id});
             foundUser.donation.push({
                 "currency":req.body.currency,
                 "amount":req.body.amount,
@@ -23,7 +24,7 @@ async function Donate (req, res)
                 "ToCreatorID":req.body.ToCreatorID
             })    
             await foundUser.save()  
-            res.send(200).send({status:"Your Donation is being successfully transferred."})
+            res.status(200).send({status:"Your Donation is being successfully transferred."})
         }
 
         else

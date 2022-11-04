@@ -5,11 +5,11 @@ async function getDonationData(req, res){
 
     const token = req.headers.authorization.split(" ")[1];
     const decoded = jwt.verify(token, process.env.SECRET)._id;
-
+    
     let donationData = []
 
     await DonationData.findOne({_id:decoded},async function(err, result){
-
+        //console.log(result);
         if(err)
         {
             res.status(404).send({status:"Error in fetching in your database!!"})
@@ -26,7 +26,7 @@ async function getDonationData(req, res){
                     "ToCreatorID":result.donation[i].ToCreatorID
                 })
             }
-            res.status(200).send(donationData)
+            res.status(200).send(donationData);
         }
         
         else

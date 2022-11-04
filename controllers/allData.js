@@ -8,7 +8,7 @@ async function getAll (req, res) {
     for(let i=0;i<data.length;i++)
     {
         AllData.push({
-            "Name":data[i].name,
+            "name":data[i].name,
             "email":data[i].email,
             "profession":data[i].profession,
             "profileURL":data[i].profileURL
