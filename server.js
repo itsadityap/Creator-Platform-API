@@ -12,7 +12,7 @@ app.use(cors());
 
 // Importing Routes
 const authRoutes = require('./routes/auth');
-const userRoutes = require('./routes/user');
+//const userRoutes = require('./routes/user');
 const allData =  require('./routes/allCreator');
 const donation = require('./routes/donation')
 const getDonation = require('./routes/getDonation')
@@ -32,7 +32,7 @@ mongoose.connect(process.env.MONGO_DB_URL, {
 
 // Implementing Routes.
 app.use('/api/v1', authRoutes);
-app.use('/api/v1', userRoutes);
+//app.use('/api/v1', userRoutes);
 app.use('/api/v1', allData)
 app.use('/api/v1', donation)
 app.use('/api/v1', getDonation)

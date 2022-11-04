@@ -1,27 +1,38 @@
 const DonationData = require("../models/user")
-
+const jwt = require('jsonwebtoken');
 async function Donate (req, res) 
 {
-    const Donation = new DonationData(req.body)
-    // console.log(Donation);
-    Donation.save((err, user) => {
-        if(err) {
-            return res.status(400).json({
-                success: false,
-                error: "Invalid Request"
-            })
+    const token = req.headers.authorization.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.SECRET)._id;
+
+    const validateCreatorID = req.body.ToCreatorID;
+    
+    await DonationData.findOne({_id:validateCreatorID},async function(err, result){
+
+        if(err)
+        {
+            res.status(404).send({status:"The creator you want was not found in the database."})
         }
-        res.json({
-            success: true,
-            Donation: {
-                currency: user.currency,
-                amount: user.amount,
-                message: user.message,
-                ToCreator: user.ToCreator,
-                id: user._id
-            }
-        });
-    })
+
+        if(result && (decoded._id!=validateCreatorID._id))
+        {
+            foundUser.donation.push({
+                "currency":req.body.currency,
+                "amount":req.body.amount,
+                "message":req.body.message,
+                "ToCreatorID":req.body.ToCreatorID
+            })    
+            await foundUser.save()  
+            res.send(200).send({status:"Your Donation is being successfully transferred."})
+        }
+
+        else
+        {
+            res.status(400).send({status:"Unexpected Error in adding donation data"})
+        }
+    }   
+    ).select("_id")
+     .lean()
 }
 
 module.exports = {

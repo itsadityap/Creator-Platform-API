@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const crypto = require('crypto');
 const { v4: uuidv4 } = require('uuid');
 
-const DonationSchema = new Schema({
+const DonationSchema = new mongoose.Schema({
     currency: {
         type: String,
         required: true
@@ -15,7 +15,7 @@ const DonationSchema = new Schema({
         type: String,
         required: true
     },
-    ToCreator: {
+    ToCreatorID: {
         type: String,
         required: true
     } 
