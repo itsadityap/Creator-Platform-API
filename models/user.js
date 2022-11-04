@@ -2,6 +2,25 @@ const mongoose = require('mongoose');
 const crypto = require('crypto');
 const { v4: uuidv4 } = require('uuid');
 
+const DonationSchema = new Schema({
+    currency: {
+        type: String,
+        required: true
+    },
+    amount: {
+        type: Number,
+        required: true
+    },
+    message: {
+        type: String,
+        required: true
+    },
+    ToCreator: {
+        type: String,
+        required: true
+    } 
+})
+
 const userSchema = mongoose.Schema({
     username: {
         type: String,
@@ -29,6 +48,9 @@ const userSchema = mongoose.Schema({
     profileURL:{
         type: String,
         required: true,
+    },
+    donation:{
+        type: [DonationSchema],
     },
     salt: String
 }, {

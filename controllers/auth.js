@@ -16,6 +16,7 @@ exports.signup = (req, res) => {
     }
 
     const user = new User(req.body)
+    //console.log(user);
     user.save((err, user) => {
         if(err) {
             return res.status(400).json({
@@ -25,7 +26,8 @@ exports.signup = (req, res) => {
         }
         res.json({
             success: true,
-            user: {
+            user: 
+            {
                 username: user.username,
                 email: user.email,
                 id: user._id

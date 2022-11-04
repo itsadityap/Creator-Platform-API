@@ -1,29 +1,27 @@
-const User = require('../models/user');
-const DonationSchema = require("../models/donation")
-const {isSignedIn, isAuthenticated} = require('../controllers/auth')
-const jwt = require('jsonwebtoken');
+const DonationData = require("../models/user")
 
-function userVerification(req, res, next) 
+async function Donate (req, res) 
 {
-    //let authorization = req.headers.authorization.split(' ')[1],decoded;
-    // decoded = jwt.verify(authorization, secret);
-    // req.body.id = decoded.id;
-    // if(decoded.id){
-    //     next();
-    // }else{
-    //     res.send("Verification Failed.");
-    // }
-
-    let token = req.cookies.jwt;
-    
-}
-
-async function Donate (req, res) {
-
-    if(isSignedIn)
-    {
-        res.send(400)
-    }
+    const Donation = new DonationData(req.body)
+    // console.log(Donation);
+    Donation.save((err, user) => {
+        if(err) {
+            return res.status(400).json({
+                success: false,
+                error: "Invalid Request"
+            })
+        }
+        res.json({
+            success: true,
+            Donation: {
+                currency: user.currency,
+                amount: user.amount,
+                message: user.message,
+                ToCreator: user.ToCreator,
+                id: user._id
+            }
+        });
+    })
 }
 
 module.exports = {

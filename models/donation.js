@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const DonationSchema = mongoose.Schema({
-    id: {
-        type: Number,
-        required: true
-    },
     currency: {
         type: String,
         required: true
@@ -18,18 +14,18 @@ const DonationSchema = mongoose.Schema({
         required: true
     },
     ToCreator: {
-        type: _id,
+        type: String,
         required: true
     } 
 }, {
     timestamps: true
 });
 
-CreatorSchema.set("toJSON", {
+DonationSchema.set("toJSON", {
     versionKey: false,
     transform: function (doc, ret) {
         delete ret._id;
     },
 });
 
-module.exports(mongoose.model("Donation", DonationSchema));
+module.exports = mongoose.model("Donation", DonationSchema);

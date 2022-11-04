@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const {signout, signup, signin, updateUserPassword} = require('../controllers/auth');
-const {getUserById} = require('../scratches/user');
 //const {isSignedIn, isAuthenticated} = require('../controllers/auth');
 const { check } = require('express-validator');
 

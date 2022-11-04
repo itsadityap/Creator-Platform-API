@@ -1,13 +1,13 @@
 const express = require('express');
-const {isSignedIn, isAuthenticated} = require('../controllers/auth');
 const DonationController = require("../controllers/donation")
+const checkAuth = require('../middlewares/check-auth');
 const router = express.Router();
 
 router.post('/donate',
-            isSignedIn,
-            Donate);
+            checkAuth,
+            DonateRoute);
 
-function Donate(req, res){
+function DonateRoute(req, res){
     DonationController
         .Donate(req, res)
         .then((data) => {})
