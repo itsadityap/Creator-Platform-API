@@ -14,7 +14,7 @@ exports.signup = (req, res) => {
         })
     }
 
-    console.log(req.body);
+    //console.log(req.body);
     const user = new User(req.body)
     user.save((err, user) => {
         if(err) {
