@@ -8,9 +8,43 @@ A **working api** for creator API platform. Created using NodeJS.
 ### Endpoints
 * ```/api/v1/signup``` - Signup into the Website
 	
-* ```/api/v1/signin``` - Login into the Website
-* ```/api/v1/signout``` - Signout of the Website
-* ```/api/v1/alldata``` - Get all users for the home page rendering
-* ```/api/v1/donate``` **(protected route)** - Post request for sending 
-* ```/api/v1/getDonation``` **(protected route)** - Post request for returning all donations from a particular creator (who is logged in) to another creators
+    **Signing Up**
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/1.png?raw=true)
 
+    **Sign Up Error Handling**
+
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/2.png?raw=true)
+
+
+* ```/api/v1/signin``` - Login into the Website
+
+    **Logging In**
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/3.png?raw=true)
+
+    **Login if user does not exist**
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/4.png?raw=true)
+* ```/api/v1/signout``` - 
+Signout of the Website
+
+    **Signing Out**
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/12.png?raw=true)
+
+* ```/api/v1/alldata``` - Get all users for the home page rendering
+
+    **Get Data of all the users**
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/8.png?raw=true)
+
+* ```/api/v1/donate``` **(protected route)** - Post request for sending
+
+    **Sening Donations if user is Logged In**
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/5.png?raw=true)
+
+    **Sening Donations if user is NOT Logged In**
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/6.png?raw=true)
+
+    **If the creator you want to find is not found was not found in the database**
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/7.png?raw=true)
+
+    **If the user writes his own ID**
+    ![1]()
+* ```/api/v1/getDonation``` **(protected route)** - Post request for returning all donations from a particular creator (who is logged in) to another creators
