@@ -56,7 +56,7 @@ Signout of the Website
 
     **If the user writes his own ID**
 
-    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/13.png?raw=true)
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/14.png?raw=true)
 
     
     <br><br>
