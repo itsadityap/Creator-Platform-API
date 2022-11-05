@@ -5,7 +5,7 @@
 
 A **working api** for creator API platform. Created using NodeJS. 
 
-To make it work on your system, clone the repository, then `npm init`. Make an .env file and add two varibles `MONGO_DB_URL` and `SECRET` for JWT.
+To make it work on your system, clone the repository, then `npm install`. Make an .env file and add two variables `MONGO_DB_URL` and `SECRET` for JWT.
 
 ### Endpoints
 * ```/api/v1/signup``` - Signup into the Website
