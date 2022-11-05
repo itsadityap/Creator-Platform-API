@@ -46,5 +46,15 @@ Signout of the Website
     ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/7.png?raw=true)
 
     **If the user writes his own ID**
-    ![1]()
+
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/13.png?raw=true)
+
 * ```/api/v1/getDonation``` **(protected route)** - Post request for returning all donations from a particular creator (who is logged in) to another creators
+
+    **Getting all the donation information of the logged In user**
+
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/11.png?raw=true)
+
+    **Getting donation information if the user is not Logged in**
+
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/10.png?raw=true)
