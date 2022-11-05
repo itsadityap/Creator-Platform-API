@@ -12,5 +12,5 @@ A **working api** for creator API platform. Created using NodeJS.
 * ```/api/v1/signout``` - Signout of the Website
 * ```/api/v1/alldata``` - Get all users for the home page rendering
 * ```/api/v1/donate``` **(protected route)** - Post request for sending 
-* ```/api/v1/getDonation``` **(protected route)** -
+* ```/api/v1/getDonation``` **(protected route)** - Post request for returning all donations from a particular creator (who is logged in) to another creators
 

@@ -16,7 +16,7 @@ async function Donate (req, res)
 
         if(result && (decoded!=validateCreatorID))
         {
-            let foundUser = await DonationData.findOne({_id:result._id});
+            let foundUser = await DonationData.findOne({_id:decoded});
             foundUser.donation.push({
                 "currency":req.body.currency,
                 "amount":req.body.amount,
