@@ -9,13 +9,15 @@ A **working api** for creator API platform. Created using NodeJS.
 * ```/api/v1/signup``` - Signup into the Website
 	
     **Signing Up**
-    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/1.png?raw=true)
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/1.png?raw=true|width=100px|)
+    
 
     **Sign Up Error Handling**
 
     ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/2.png?raw=true)
 
 
+    <br><br>
 * ```/api/v1/signin``` - Login into the Website
 
     **Logging In**
@@ -23,17 +25,22 @@ A **working api** for creator API platform. Created using NodeJS.
 
     **Login if user does not exist**
     ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/4.png?raw=true)
+
+    <br><br>
 * ```/api/v1/signout``` - 
 Signout of the Website
 
     **Signing Out**
     ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/12.png?raw=true)
 
-* ```/api/v1/alldata``` - Get all users for the home page rendering
 
+    <br><br>
+* ```/api/v1/alldata``` - Get all users for the home page rendering
     **Get Data of all the users**
     ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/8.png?raw=true)
 
+
+    <br><br>
 * ```/api/v1/donate``` **(protected route)** - Post request for sending
 
     **Sening Donations if user is Logged In**
@@ -49,6 +56,9 @@ Signout of the Website
 
     ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/13.png?raw=true)
 
+    
+    <br><br>
+    
 * ```/api/v1/getDonation``` **(protected route)** - Post request for returning all donations from a particular creator (who is logged in) to another creators
 
     **Getting all the donation information of the logged In user**
