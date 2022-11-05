@@ -38,6 +38,7 @@ Signout of the Website
 
     <br><br>
 * ```/api/v1/alldata``` - Get all users for the home page rendering
+
     **Get Data of all the users**
     ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/8.png?raw=true)
 
