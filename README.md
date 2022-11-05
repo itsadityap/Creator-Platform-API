@@ -3,13 +3,15 @@
 
 ## Creator API Platform (Backend)
 
-A **working api** for creator API platform. Created using NodeJS.
+A **working api** for creator API platform. Created using NodeJS. 
+
+To make it work on your system, clone the repository, then `npm init`. Make an .env file and add two varibles `MONGO_DB_URL` and `SECRET` for JWT.
 
 ### Endpoints
 * ```/api/v1/signup``` - Signup into the Website
 	
     **Signing Up**
-    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/1.png?raw=true|width=100px|)
+    ![1](https://github.com/itsadityap/Creator-Platform-API/blob/main/public/1.png?raw=true)
     
 
     **Sign Up Error Handling**
